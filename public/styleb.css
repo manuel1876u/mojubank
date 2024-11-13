@@ -4,7 +4,7 @@
    margin:0;
    padding:0; 
    box-sizing:border-box;
-}    
+}     
 
 button:hover{
     opacity:0.7864;
@@ -12,7 +12,8 @@ button:hover{
 
 
 body{
-    background-color:white; 
+    background-color:white;  
+    font-family:'Poppins', sans-serif;
 }   
  
 .pfpenclose{ 
