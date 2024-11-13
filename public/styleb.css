@@ -39,7 +39,8 @@ body{
 
 .pfpenclose .first .a i, .pfpenclose .first .b i{
      color:white;
-     margin-top:7px; 
+     margin-top:7px;  
+     font-size:20px;
      margin-right:10px;
 } 
 
@@ -67,20 +68,20 @@ body{
 
 .second #mybalance{
      color:white;
-     font-size:24px; 
+     font-size:20px; 
      font-family:'Poppins', sans-serif;
 }  
 
 .second #mybalance span{
     color:white;
-    font-size:18px; 
+    font-size:16px; 
     font-weight:bold;
     font-family:'Poppins', sans-serif;
 } 
 
 .second .welcm{
      color:white; 
-     font-size:24px; 
+     font-size:18px; 
      font-family:'Poppins', sans-serif;
      font-weight:bold; 
      margin-top:10px;
@@ -92,7 +93,7 @@ body{
 
 .second .wm{
     color:white; 
-    font-size:17px; 
+    font-size:16px; 
     font-family:'Poppins', sans-serif; 
     margin-top:10px;
 }   
@@ -101,7 +102,7 @@ body{
 .quick{
      margin-top:20px; 
      margin-bottom:20px; 
-     margin-left:40px;
+     margin-left:20px;
      margin-right:20px;
      display:flex;
      min-width:100px;   
@@ -115,8 +116,9 @@ body{
 }  
 
 .quick p{
-     color:black; 
-     font-size:20px; 
+     color:lightgray;   
+     font-weight:bold;
+     font-size:16px; 
      font-family:'Poppins', sans-serif; 
 }  
 
@@ -124,7 +126,7 @@ body{
  min-width:100px;
  margin-left:10px;
  margin-right:20px;
- margin-top:20px;
+ margin-top:40px;
  margin-bottom:20px;
  display:flex; 
  overflow:scroll;
@@ -146,39 +148,33 @@ body{
      width:100%;
      display:block;  
      padding-left:5px;  
-     padding-left:5px; 
-     margin-left:10px;
-     margin-right:10px;
+     padding-left:5px;  
      text-align:center;
-     padding-right:4px;
-     border-radius:30px;
 }  
 
 .overall div p{  
     color:black; 
-    font-size:16px; 
+    font-size:15px; 
     font-family:'Poppins', sans-serif;     
 } 
 
 .overall div i{
      padding:7px 7px;
-     height:40px; 
-     font-size:30px;
-     border-radius:15px;
-     color:rgb(207, 83, 83); 
+     height:30px; 
+     font-size:20px;
+     border-radius:5px;
+     color:coral; 
      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
      background-color:white;
 }   
 
 
 .acch{
-     min-width:100px;
-     margin-left:20px;
-     margin-right:20px; 
+     min-width:100px; 
      display:flex;
      justify-content:space-between; 
      text-align:center;
-     margin-top:20px;
+     margin-bottom:40px;
      margin-top:15px;
 }
  
@@ -189,7 +185,8 @@ body{
      padding-top:5px;  
      font-size:16px;
      font-family:'Poppins', sans-serif;
-     width:100%;
+     width:100%; 
+     margin:5px 5px;
 }  
  
  
@@ -221,7 +218,7 @@ body{
      padding-left:5px;
      border-left:3px solid coral;  
      color:black;
-     font-size:18px;
+     font-size:16px;
      font-family:'Poppins', sans-serif;
 } 
 
@@ -282,4 +279,64 @@ body{
   .transaction-footer span {
     color:grey;
     font-size:14px; 
-  }
+  } 
+
+
+  .footer{
+     padding-top:50px; 
+     padding-bottom:15px; 
+     margin-top:40px;
+     display:flex;  
+     background-image:linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.30)), url('/images/sgpbg.jpeg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat; 
+     min-width:100px;
+     padding-left:20px;
+     padding-right:20px; 
+  }  
+
+  .footer .links{
+      display:grid;
+      grid-gap:5px;
+      width:100%;
+      grid-template-columns:repeat(auto-fit, minmax(200px, 3fr)); 
+  }    
+
+   .footer .links div{
+     width:100%;  
+     text-align:center; 
+   }
+
+  .footer .links p{
+     color:white;
+     font-family:'Poppins', sans-serif;
+     font-size:14px;
+  }  
+
+  .footer .links p:hover{
+     text-decoration:underline;
+  }  
+
+
+  .footer .icons{
+     display:flex; 
+     width:60%;  
+     justify-content:right; 
+     margin-top:70px;
+  }  
+
+  .footer .icons i{
+        background-color:lightgray;
+        color:black;
+        font-size:20px; 
+        border-radius:50px; 
+        padding:5px 5px;
+        height:30px; 
+        margin-right:7px;
+  } 
+
+  .fa.fa-twitter::before{
+    content:"𝕏"; 
+  }  
+
