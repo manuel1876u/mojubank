@@ -1,0 +1,288 @@
+ 
+
+ *{ 
+    margin:0;
+    padding:0; 
+    box-sizing:border-box;
+ }  
+
+body{
+  background-image:linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.30)), url('/images/sgpbg.jpeg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat; 
+}   
+ 
+   button:hover{
+       opacity:0.7864;
+   }  
+
+   .header{
+       text-align:right;
+       margin-left:25px;
+       margin-right:25px; 
+       margin-top:45px;  
+       margin-bottom:15px; 
+       display:flex; 
+       justify-content:right;  
+   } 
+
+   .header i{
+     color:white; 
+     font-size:20px;
+   } 
+
+   .tolef{
+      margin-left:70px;
+   }
+ 
+    .find, .help{
+         display:flex;  
+         font-size:17px;
+    }  
+
+    .find p, .help p{
+       margin-left:5px;
+    }
+
+    .find p, .help p{
+       color:white;
+       font-size:14px;
+       font-family:'Poppins', sans-serif;
+    }
+  
+.loginform{
+    background-color:white;
+    border:none; 
+    min-width:100px;
+    padding-bottom:40px;  
+}    
+
+.redbg{
+  background-color:red;
+  width:100%; 
+  height:6px;
+  top:0px;
+} 
+  
+
+.loginform .inner{ 
+  padding-left:20px;
+  padding-right:20px;  
+  padding-top:20px;
+ 
+}  
+
+
+   .dlogo{
+     width:100%; 
+     text-align:center;
+   } 
+   
+
+    .dlogo img{
+         width:80px;
+         height:auto;
+    } 
+
+
+      .instruction{
+         width:100%;
+         background-color:#f3f3f3; 
+         border:1.4px solid red;
+         padding:10px 10px; 
+         margin-top:15px;
+         margin-bottom:10px;
+      } 
+
+
+      .instruction p{
+         color:red;
+         font-family:'Poppins', sans-serif;
+         font-size:13.5px;  
+         text-align:left;
+      }  
+  
+
+      .instruction p span{
+         text-decoration:underline;
+      }
+
+
+      fieldset { 
+        position: relative;
+        border:none;
+        margin-top:15px;
+      }  
+      
+      input {
+        width: 100%;
+        padding: 10px 5px;
+        font-size: 16px;
+        border-bottom: 1px solid #ccc;
+        border-left:none;
+        border-right:none;
+        border-top:none;
+        border-radius:4px;
+      }
+      
+      legend {
+        position: absolute;  
+        font-family:'Poppins', sans-serif;
+        font-size: 16px;
+        color: #aaa;
+        pointer-events: none;
+        transition: 0.3s ease;
+      }  
+ 
+         
+      #submit, #start{
+         width:100%; 
+         padding:12px;  
+         border-radius:3px;
+      } 
+
+      #submit{
+          background-color:red;
+          color:white; 
+          border:none;
+          font-weight:bold;
+          font-size:14px;
+          margin-top:40px;
+      } 
+
+      
+      #start{
+        background-color:white;
+        color:red;
+        font-weight:bold; 
+        font-size:14px;
+        border:2px solid red;
+        margin-top:10px;
+    }
+     
+
+    .last{
+       margin-top:20px;
+       width:100%;
+       text-align:left; 
+    }  
+
+    .last p{
+       color:grey; 
+       font-size:14px;
+       font-family:'Poppins', sans-serif;
+       padding:4px; 
+       cursor:pointer;
+    }  
+
+    .last p:hover{
+        color:red;
+         text-decoration:underline;
+         text-decoration-color:red;
+    }
+       
+    .footer{
+       margin-top:50px; 
+       margin-bottom:15px;
+       display:flex;  
+       min-width:100px;
+       margin-left:20px;
+       margin-right:20px; 
+    }  
+
+    .footer .links{
+        display:grid;
+        grid-gap:5px;
+        width:100%;
+        grid-template-columns:repeat(auto-fit, minmax(200px, 3fr)); 
+    }    
+
+     .footer .links div{
+       width:100%;  
+       text-align:center; 
+     }
+
+    .footer .links p{
+       color:white;
+       font-family:'Poppins', sans-serif;
+       font-size:14px;
+    }  
+
+    .footer .links p:hover{
+       text-decoration:underline;
+    }  
+
+
+    .footer .icons{
+       display:flex; 
+       width:60%;  
+       justify-content:right; 
+       margin-top:70px;
+    }  
+
+    .footer .icons i{
+          background-color:lightgray;
+          color:black;
+          font-size:20px; 
+          border-radius:50px; 
+          padding:5px 5px;
+          height:30px; 
+          margin-right:7px;
+    } 
+ 
+    .fa.fa-twitter::before{
+      content:"𝕏"; 
+    }  
+
+
+
+    @media only screen and (max-width:750px){  
+
+          .header, .instruction{
+             display:none;
+          }  
+
+          .dlogo{
+             margin-top:50px;
+          } 
+
+         .footer{
+              display:block;
+         } 
+
+         .footer .links, .footer .icons{
+             width:100%;
+         }   
+
+         .footer .links{
+            display:grid;
+            grid-gap:15px;
+            width:100%;
+            grid-template-columns:repeat(auto-fit, minmax(150px, 3fr)); 
+        } 
+
+         .footer .icons{
+             display:flex;
+             justify-content:space-around;  
+         }
+ 
+    }
+
+
+@media only screen and (min-width:751px){ 
+
+  .enclose{
+    margin-left:20px;
+    margin-right:170px; 
+    display: flex;
+    justify-content: flex-end; /* Aligns the div to the right */
+ }     
+ 
+
+ /* Here is the div we aligned to the right */
+  .loginform{
+     max-width:330px;
+  }
+ 
+}

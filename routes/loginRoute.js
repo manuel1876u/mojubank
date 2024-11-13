@@ -1,0 +1,9 @@
+const express = require('express');
+const ejs = require('ejs');
+const app = express(); 
+const router = express.Router(); 
+const loginController = require('../controllers/loginController')
+
+ router.get('/IB/Welcome', loginController.getLogin);
+
+ module.exports = router;

