@@ -5,7 +5,9 @@
  const path = require('path');
  const mongodb = require('mongodb');
  const mongoose = require('mongoose'); 
- const loginRoute = require('./routes/loginRoute');
+ const loginRoute = require('./routes/loginRoute'); 
+ const dashboardRoute = require('./routes/dashboardRoute');
+
  const app = express(); 
 
  const dotenv = require('dotenv');  
@@ -20,6 +22,7 @@
  });
 
  app.use('/', loginRoute); 
+ app.use('/member', dashboardRoute); 
 
  app.use(express.static(path.join(__dirname + '/public'))); 
  app.listen(3000, ()=>{

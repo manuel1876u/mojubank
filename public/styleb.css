@@ -1,0 +1,285 @@
+  
+
+*{ 
+   margin:0;
+   padding:0; 
+   box-sizing:border-box;
+}    
+
+button:hover{
+    opacity:0.7864;
+}    
+
+
+body{
+    background-color:white; 
+}   
+ 
+.pfpenclose{ 
+    background: linear-gradient(to right, red, #212121);
+     width:100%;
+     padding-left:20px;
+     padding-right:20px;  
+     padding-bottom:15px;
+     padding-top:20px;
+} 
+
+
+.pfpenclose .first{
+     display:flex;
+     justify-content:space-between;  
+     min-width:100px;
+}   
+
+
+.pfpenclose .first .a, .pfpenclose .first .b{
+    display:flex;  
+    width:100%;
+}  
+
+.pfpenclose .first .a i, .pfpenclose .first .b i{
+     color:white;
+     margin-top:7px; 
+     margin-right:10px;
+} 
+
+.pfpenclose .first .b button{
+    color:white; 
+    border:1px solid white; 
+    background:none;
+    border-radius:30px;
+    padding:7px; 
+    width:100%; 
+}
+
+ 
+
+.pfpenclose .b{
+    display:flex;
+    justify-content:space-between;  
+    width:20%; 
+} 
+
+
+.second{
+    margin-top:15px;
+} 
+
+.second #mybalance{
+     color:white;
+     font-size:24px; 
+     font-family:'Poppins', sans-serif;
+}  
+
+.second #mybalance span{
+    color:white;
+    font-size:18px; 
+    font-weight:bold;
+    font-family:'Poppins', sans-serif;
+} 
+
+.second .welcm{
+     color:white; 
+     font-size:24px; 
+     font-family:'Poppins', sans-serif;
+     font-weight:bold; 
+     margin-top:10px;
+} 
+
+.second .welcm span{
+     color:black;
+} 
+
+.second .wm{
+    color:white; 
+    font-size:17px; 
+    font-family:'Poppins', sans-serif; 
+    margin-top:10px;
+}   
+
+  
+.quick{
+     margin-top:20px; 
+     margin-bottom:20px; 
+     margin-left:40px;
+     margin-right:20px;
+     display:flex;
+     min-width:100px;   
+}
+  
+
+.quick i{
+     margin-left:7px; 
+     color:rgb(207, 83, 83); 
+     margin-top:5px;
+}  
+
+.quick p{
+     color:black; 
+     font-size:20px; 
+     font-family:'Poppins', sans-serif; 
+}  
+
+.overall{
+ min-width:100px;
+ margin-left:10px;
+ margin-right:20px;
+ margin-top:20px;
+ margin-bottom:20px;
+ display:flex; 
+ overflow:scroll;
+ justify-content:space-between;
+}   
+
+
+   /* Hide scrollbar but keep scrolling */
+.overall{
+    overflow: scroll; /* or overflow-x or overflow-y if you need to scroll in one direction */
+    scrollbar-width: none; /* For Firefox */
+  }
+  
+  .overall::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+  }
+
+.overall div{
+     width:100%;
+     display:block;  
+     padding-left:5px;  
+     padding-left:5px; 
+     margin-left:10px;
+     margin-right:10px;
+     text-align:center;
+     padding-right:4px;
+     border-radius:30px;
+}  
+
+.overall div p{  
+    color:black; 
+    font-size:16px; 
+    font-family:'Poppins', sans-serif;     
+} 
+
+.overall div i{
+     padding:7px 7px;
+     height:40px; 
+     font-size:30px;
+     border-radius:15px;
+     color:rgb(207, 83, 83); 
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+     background-color:white;
+}   
+
+
+.acch{
+     min-width:100px;
+     margin-left:20px;
+     margin-right:20px; 
+     display:flex;
+     justify-content:space-between; 
+     text-align:center;
+     margin-top:20px;
+     margin-top:15px;
+}
+ 
+
+.acch div{
+     border-bottom:3px solid red;
+     padding-bottom:5px;
+     padding-top:5px;  
+     font-size:16px;
+     font-family:'Poppins', sans-serif;
+     width:100%;
+}  
+ 
+ 
+.acctandins, .transaction-container{
+    min-width:100px;
+    margin-left:20px;
+    margin-right:20px;   
+    display:grid;
+    margin-top:20px;
+    grid-gap:25px;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 5fr));
+    padding-bottom:20px; 
+} 
+
+.acctandins .deposits, .transaction{
+     width:100%;
+     background-color:white;  
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+     padding:20px 20px; 
+}  
+
+.acctandins .deposits .dfa{
+     display:flex;
+     width:100%;
+     justify-content:space-between;
+}  
+
+.acctandins .deposits .dfa .dep{
+     padding-left:5px;
+     border-left:3px solid coral;  
+     color:black;
+     font-size:18px;
+     font-family:'Poppins', sans-serif;
+} 
+
+.acctandins .deposits .dfa i{
+     color:grey;
+     font-size:20px;
+}  
+
+.acctandins .deposits .dfab{
+      text-align:right; 
+      font-family:'Poppins', sans-serif;
+      width:100%;
+      color:grey;
+      font-size:16px; 
+      margin-top:7px;
+}  
+
+.acctandins .deposits .dfac{
+    text-align:right; 
+    width:100%;
+    color:black; 
+    font-family:'Poppins', sans-serif;
+    margin-top:7px; 
+    font-weight:bold;
+    font-size:16px;
+} 
+
+.acctandins .deposits .dfac p span{
+    text-align:right; 
+    width:100%;
+    color:grey;
+    font-size:14px;
+} 
+ 
+ 
+ 
+
+  .transaction-header {
+    font-weight: bold;
+    font-size: 12px;
+    font-family:'Poppins',sans-serif;
+    margin-bottom: 5px;
+  }
+
+  .transaction-details {
+    font-size: 16px;
+    font-family:'Poppins',sans-serif;
+  }
+
+  .transaction-footer {
+    text-align: right;
+    font-size: 16px;
+    font-family:'Poppins',sans-serif;
+    font-weight: bold;
+    color: black;
+  } 
+
+  .transaction-footer span {
+    color:grey;
+    font-size:14px; 
+  }
