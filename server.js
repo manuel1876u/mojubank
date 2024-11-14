@@ -19,8 +19,9 @@
  const dotenv = require('dotenv');  
  app.use(express.json());
  app.use(express.urlencoded({extended:false}));   
- app.use(cookieParser()); 
-app.use('/member/IB/profile', authMiddleware);  
+ app.use(cookieParser());  
+ 
+  
  app.set('view engine', 'ejs');
  app.use(cors());
  dotenv.config();  
