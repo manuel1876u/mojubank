@@ -72,12 +72,18 @@ body{
 .second #mybalance{
      color:white;
      font-size:20px; 
-     font-family:'Poppins', sans-serif;
-}  
+     font-family:'Poppins', sans-serif; 
+     display:none;
+}    
+
+  #sbal{
+      font-size:20px; 
+      color:white;
+  }
 
 .second #mybalance span{
     color:white;
-    font-size:16px; 
+    font-size:14px; 
     font-weight:bold;
     font-family:'Poppins', sans-serif;
 } 
@@ -119,9 +125,9 @@ body{
 }  
 
 .quick p{
-     color:lightgray;   
+     color:#212121;   
      font-weight:bold;
-     font-size:16px; 
+     font-size:15.5px; 
      font-family:'Poppins', sans-serif; 
 }  
 
@@ -197,7 +203,11 @@ body{
 
 .acch #acct{ 
      border-bottom:3px solid red;
-}
+}  
+
+#acct, #hist{
+     cursor:pointer;
+} 
  
  
 .acctandins, .transaction-container{
@@ -228,7 +238,7 @@ body{
      padding-left:5px;
      border-left:3px solid coral;  
      color:black;
-     font-size:16px;
+     font-size:15px;
      font-family:'Poppins', sans-serif;
 } 
 
@@ -260,7 +270,7 @@ body{
     text-align:right; 
     width:100%;
     color:grey;
-    font-size:14px;
+    font-size:13px;
 } 
  
  

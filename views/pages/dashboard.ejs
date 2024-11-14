@@ -13,7 +13,7 @@
                 <div class="first">
                 <div class="a">
                    <i class="fa fa-bell"></i>  
-                  <i class="fas fa-eye-slash"></i> 
+                  <i id="showbal" class="fas fa-eye-slash"></i> 
                 </div> 
                 
                   <div class="b">
@@ -23,6 +23,7 @@
                 </div> 
                   
              <div class="second"> 
+                 <p id="sbal">******</p>
                 <p id="mybalance"><span>SGD</span>7,094,387</p>
                 <p class="welcm">Welcome to <span>digibank</span></p>
                 <p class="wm">Enjoy the faster and more convenient way to bank on the go</p>
@@ -67,7 +68,7 @@
                      <div id="hist">History</div>
                 </div>
 
-              <div class="acctandins"> 
+              <div id="ic" class="acctandins"> 
 
           <div class="deposits">
             <div class="dfa">
@@ -134,7 +135,7 @@
 
 
       
-    <div class="transaction-container" style="display:none">
+    <div id="tc" class="transaction-container" style="display:none">
         <div class="transaction">
           <div class="transaction-header">Transaction</div>
           <div class="transaction-details">
@@ -173,7 +174,52 @@
             <i class="fab fa-linkedin"></i>
             <i class="fab fa-youtube"></i>   
           </div>
-    </div>
+    </div> 
+
+      <script>
+           var acct = document.getElementById('acct');
+           var hist = document.getElementById('hist'); 
+           var ic = document.getElementById('ic');
+           var tc = document.getElementById('tc');
+
+           acct.onclick = function(e) {  
+              e.target.style.borderBottom = '3px solid red'; 
+              hist.style.borderBottom = '3px solid white';   
+              ic.style.display = 'block';
+              tc.style.display = 'none';
+           } 
+
+           
+           hist.onclick = function(e) {  
+              e.target.style.borderBottom = '3px solid red';
+              acct.style.borderBottom = '3px solid white'; 
+              tc.style.display = 'block';
+              ic.style.display = 'none';
+           } 
+
+           //hide and show balance  
+           // JavaScript for toggling balance visibility and icon
+const showbal = document.getElementById("showbal");
+const mybalance = document.getElementById("mybalance"); 
+const sbal = document.getElementById("sbal");
+
+showbal.onclick = function() {
+  // Toggle the balance display
+  if (mybalance.style.display === "none") { 
+    mybalance.style.display = "block"; // Show balance 
+    sbal.style.display = 'none';
+    showbal.classList.remove("fa-eye-slash");
+    showbal.classList.add("fa-eye"); // Change icon to eye
+  } else { 
+    sbal.style.display = 'block';
+    mybalance.style.display = "none"; // Hide balance
+    showbal.classList.remove("fa-eye");
+    showbal.classList.add("fa-eye-slash"); // Change icon to eye-slash
+  }
+};
+
+
+      </script>
               
        </body>
 </html>
