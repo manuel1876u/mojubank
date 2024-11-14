@@ -8,7 +8,8 @@
  const cookieParser = require('cookie-parser');
  const bcrypt  = require('bcryptjs');
  const jwt = require('jsonwebtoken'); 
- const authMiddleware = require('./middlewares/authentication'); 
+ const authMiddleware = require('./middlewares/authentication');  
+ const authbMiddleware = require('./middlewares/authc'); 
  const loginRoute = require('./routes/loginRoute');  
  const dashboardRoute = require('./routes/dashboardRoute');   
 
@@ -24,15 +25,19 @@
   
  app.set('view engine', 'ejs');
  app.use(cors());
- dotenv.config();  1
+ dotenv.config(); 
+
+  
+ app.use('/member/IB/profile', authMiddleware);
+ app.use('/IB/Welcome', authbMiddleware);
 
  mongoose.connect(process.env.MONGOOSE_URL).then(()=>{console.log('database connected succesfully')}).catch((err)=>{
      console.log('new error: ', err); 
  });
 
  app.use('/', loginRoute); 
- app.use('/member', dashboardRoute);   
-
+ app.use('/member', dashboardRoute);    
+ 
    
 //log out user
 app.get('/logout', (req, res)=>{ 
