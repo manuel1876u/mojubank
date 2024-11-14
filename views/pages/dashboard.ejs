@@ -17,14 +17,14 @@
                 </div> 
                 
                   <div class="b">
-                    <i class="fa fa-question"></i> 
+                    <i class="fa fa-question qtn"></i> 
                     <button id="logout">Log out</button>
                   </div> 
                 </div> 
                   
              <div class="second"> 
                  <p id="sbal">******</p>
-                <p id="mybalance"><span>SGD</span>7,094,387</p>
+                <p id="mybalance"><span>SGD </span>7,094,387</p>
                 <p class="welcm">Welcome to <span>digibank</span></p>
                 <p class="wm">Enjoy the faster and more convenient way to bank on the go</p>
              </div>
@@ -81,7 +81,7 @@
             </div>  
 
             <div class="dfac">
-              <p><span>SGD</span>10,924.00</p>
+              <p><span>SGD </span>10,924.00</p>
           </div>  
       </div>
 
@@ -97,7 +97,7 @@
         </div>  
 
         <div class="dfac">
-          <p><span>SGD</span>10,924.00</p>
+          <p><span>SGD </span>10,924.00</p>
       </div>  
   </div>
 
@@ -113,7 +113,7 @@
     </div>  
 
     <div class="dfac">
-      <p><span>SGD</span>10,924.00</p>
+      <p><span>SGD </span>10,924.00</p>
   </div>  
 </div>  
 
@@ -128,7 +128,7 @@
     </div>  
 
     <div class="dfac">
-      <p><span>SGD</span>10,924.00</p>
+      <p><span>SGD </span>10,924.00</p>
   </div>  
 </div> 
     </div>  
@@ -143,17 +143,18 @@
             Description: Payment for service <br>
             Status: Completed
           </div>
-          <div class="transaction-footer"><span>SGD</span>150,790.00</div> 
+          <div class="transaction-footer"><span>SGD </span>150,790.00</div> 
         </div>
     
         <div class="transaction">
           <div class="transaction-header">Credit</div>
           <div class="transaction-details">
-            Date: 2024-11-12 <br>
+            Date: 2024-11-12 <br> 
+            From : Samaila Moses <br>
             Description: Purchase of goods <br>
             Status: Completed
           </div>
-          <div class="transaction-footer"><span>SGD</span>7,500,300.00</div>
+          <div class="transaction-footer"><span>SGD </span>7,500,300.00</div>
         </div>
       </div> 
         
@@ -183,7 +184,9 @@
            var tc = document.getElementById('tc');
 
            acct.onclick = function(e) {  
-              e.target.style.borderBottom = '3px solid red'; 
+              e.target.style.borderBottom = '3px solid red';  
+              e.target.style.color = 'black';
+              hist.style.color = 'lightgray';
               hist.style.borderBottom = '3px solid white';   
               ic.style.display = 'block';
               tc.style.display = 'none';
@@ -191,7 +194,9 @@
 
            
            hist.onclick = function(e) {  
-              e.target.style.borderBottom = '3px solid red';
+              e.target.style.borderBottom = '3px solid red'; 
+              e.target.style.color = 'black'; 
+              acct.style.color = 'lightgray';
               acct.style.borderBottom = '3px solid white'; 
               tc.style.display = 'block';
               ic.style.display = 'none';

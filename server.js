@@ -5,6 +5,7 @@
  const path = require('path');
  const mongodb = require('mongodb');
  const mongoose = require('mongoose'); 
+ const bcrypt  = require('bcryptjs');
  const loginRoute = require('./routes/loginRoute'); 
  const dashboardRoute = require('./routes/dashboardRoute');  
 

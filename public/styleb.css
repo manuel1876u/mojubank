@@ -40,8 +40,7 @@ body{
 }  
 
 .pfpenclose .first .a i, .pfpenclose .first .b i{
-     color:white;
-     margin-top:7px;  
+     color:white;  
      font-size:20px;
      margin-right:10px;
 } 
@@ -62,7 +61,13 @@ body{
     display:flex;
     justify-content:space-between;  
     width:20%; 
-} 
+}  
+
+.qtn{
+      padding:5px 5px;
+      border:1px solid white;
+      border-radius:50px;
+}
 
 
 .second{
@@ -198,12 +203,17 @@ body{
      font-size:14.7px;
      margin:5px 5px;
      font-family:'Poppins', sans-serif;
-     width:100%;  
-     font-weight:50px;
+     width:100%;   
 }   
 
 .acch #acct{ 
-     border-bottom:3px solid red;
+     border-bottom:3px solid red; 
+     font-weight:bold;
+}   
+
+.acch #hist{  
+     color:lightgray; 
+     font-weight:bold;  
 }  
 
 #acct, #hist{

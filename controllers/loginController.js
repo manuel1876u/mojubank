@@ -2,6 +2,7 @@
 const express = require('express');
 const ejs = require('ejs');
 const MemberSchema = require('../models/register');  
+const bcrypt  = require('bcryptjs');
 const saltRounds = 12;
 const app = express();
 
