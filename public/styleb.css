@@ -274,13 +274,13 @@ body{
     font-family:'Poppins', sans-serif;
     margin-top:7px; 
     font-weight:bold;
-    font-size:16px;
+    font-size:17px;
 } 
 
 .acctandins .deposits .dfac p span{
     text-align:right; 
     width:100%;
-    color:grey;
+    color:lightgray;
     font-size:13px;
 } 
  
@@ -302,14 +302,14 @@ body{
 
   .transaction-footer {
     text-align: right;
-    font-size: 16px;
+    font-size: 17px;
     font-family:'Poppins',sans-serif;
     font-weight: bold;
     color: black;
   } 
 
   .transaction-footer span {
-    color:grey;
+    color:lightgray;
     font-size:13px; 
   } 
 

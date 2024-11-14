@@ -5,9 +5,12 @@
  const path = require('path');
  const mongodb = require('mongodb');
  const mongoose = require('mongoose'); 
+ const cookieParser = require('cookie-parser');
  const bcrypt  = require('bcryptjs');
- const loginRoute = require('./routes/loginRoute'); 
- const dashboardRoute = require('./routes/dashboardRoute');  
+ const jwt = require('jsonwebtoken'); 
+ const authMiddleware = require('./middlewares/authentication'); 
+ const loginRoute = require('./routes/loginRoute');  
+ const dashboardRoute = require('./routes/dashboardRoute');   
 
   const MemberSchema = require('./models/register');
 
@@ -15,7 +18,9 @@
 
  const dotenv = require('dotenv');  
  app.use(express.json());
- app.use(express.urlencoded({extended:false}));
+ app.use(express.urlencoded({extended:false}));   
+ app.use(cookieParser()); 
+app.use('/member/IB/profile', authMiddleware);  
  app.set('view engine', 'ejs');
  app.use(cors());
  dotenv.config();  
@@ -25,7 +30,15 @@
  });
 
  app.use('/', loginRoute); 
- app.use('/member', dashboardRoute); 
+ app.use('/member', dashboardRoute);   
+
+   
+//log out user
+app.get('/logout', (req, res)=>{ 
+    res.clearCookie('authToken'); 
+    res.redirect('/IB/Welcome');
+ });
+ 
 
  app.use(express.static(path.join(__dirname + '/public'))); 
  app.listen(3000, ()=>{

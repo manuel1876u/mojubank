@@ -221,7 +221,14 @@ showbal.onclick = function() {
     showbal.classList.remove("fa-eye");
     showbal.classList.add("fa-eye-slash"); // Change icon to eye-slash
   }
-};
+};  
+
+//log out
+
+const logmeout = document.getElementById("logout"); 
+logmeout.addEventListener('click', ()=>{
+    window.location.href = '/logout';
+});
   
  
 

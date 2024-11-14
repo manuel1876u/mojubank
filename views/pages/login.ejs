@@ -95,7 +95,55 @@
                     //      } 
                 //        });
                 //   }
-      //      }
+      //      } 
+
+       var logino = document.getElementById('logino');
+       logino.addEventListener('submit', async (e)=>{  
+        e.preventDefault();
+            var userid = document.getElementById('userid').value; 
+            var userpin = document.getElementById('userpin').value;  
+            var subm = document.getElementById('submit'); 
+            subm.style.opacity = '0.4';
+            subm.disabled = true;
+            subm.innerHTML = 'submitting...'; 
+
+            var data = {
+                userid : userid,
+                regpass : userpin,
+            }
+            
+            try{
+              const response = await fetch('/postinglogin', {
+                method : 'post',
+                body : JSON.stringify(data),
+                      headers : {
+                            'Content-Type' : 'application/json',
+                          Accept : 'application/json',
+                         } 
+              }); 
+
+              if(!response.ok){ 
+                subm.style.opacity = '2';
+            subm.disabled = false;
+            subm.innerHTML = 'Login'; 
+                   throw response; 
+              }   
+
+              subm.style.opacity = '2';
+            subm.disabled = false;
+            subm.innerHTML = 'submitted'; 
+
+            setTimeout(()=>{
+              window.location.href = '/member/IB/profile';
+            }, 3000);
+                
+          }
+    catch(err) {
+          const error = await err.text();
+          alert(error);
+    }
+             
+       });
                   
             </script>
       </body>
