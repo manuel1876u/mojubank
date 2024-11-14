@@ -6,6 +6,8 @@ const bcrypt  = require('bcryptjs');
 const saltRounds = 12;
 const app = express();  
 const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+dotenv.config();
 
 exports.getLogin = (req, res)=>{
       res.render('./pages/login');
