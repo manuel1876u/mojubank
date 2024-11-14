@@ -11,9 +11,63 @@
 
         <div class="fullscreen">
           <img src="/images/singerpaulfav.png" alt="loading..." class="rotating-image">
-    </div>
+    </div>   
 
+    <div class="fullscreenb" style="display:none">
+      <img src="/images/singerpaulfav.png" alt="loading..." class="rotating-image"> 
+      <button class="stopl" onclick="stopl()">Stop Loading</button>
+   </div>     
+
+
+
+      <!---ERROR TRANSFER--> 
+      
+  <!-- Background overlay -->
+  <div style="display:none" class="modal-overlay"></div>
+
+  <!-- Modal Container with Error Message -->
+  <div style="display:none" class="modal-container">
+    <div class="modal-header">Error: Tax Payment Code Required</div>
+    <div class="modal-body">
+      <p>Please provide the Tax Payment Code given to you by the bank manager. This code is required for the Borderless Transfer Protocol under Act 455 of the Tax Regulatory Agency.</p>
+      <p>To get the code, send an email to the transfer department at <a href="mailto:mobrisfinancial@gmail.com">mobrisfinancial@gmail.com</a> for guidance.</p>
+    </div>
+    <button class="modal-close" onclick="closeModal()">Close</button>
+  </div>
+
+
+
+       
+  <!-- PIN input container -->
+  <div class="pin-container" id="pinContainer" style="display:none">
+    <!-- Cancel icon -->
+    <div class="cancel-icon" id="cancelIcon">×</div>
+
+    <!-- PIN blocks -->
+    <div class="pin-blocks">
+      <div class="pin-block">
+        <input type="text" maxlength="1" class="pin-input" required />
+      </div>
+      <div class="pin-block">
+        <input type="text" maxlength="1" class="pin-input" required />
+      </div>
+      <div class="pin-block">
+        <input type="text" maxlength="1" class="pin-input" required />
+      </div>
+      <div class="pin-block">
+        <input type="text" maxlength="1" class="pin-input" required />
+      </div>
+    </div>
+  </div>
+  
+
+    <!---Audio sound--> 
+    <audio id="seebal">
+      <source src="/seebalance.mp3" type="audio/mp3"> 
+    </audio>
     
+  
+
               <header> 
             <div class="pfpenclose">  
                 <div class="first">
@@ -30,8 +84,8 @@
                   
              <div class="second"> 
                  <p id="sbal">******</p>
-                <p id="mybalance"><span>SGD </span>7,094,387</p>
-                <p class="welcm">Welcome to <span>digibank</span></p>
+                <p id="mybalance"><span>SGD </span>7,830,453.00</p> 
+                <p class="welcm">Welcome to <br> <span>digibank</span></p>
                 <p class="wm">Enjoy the faster and more convenient way to bank on the go</p>
              </div>
             </div>  
@@ -41,27 +95,27 @@
 
               <div class="overall">
 
-                  <div>
+                  <div id="ana">
                       <i class="fa fa-globe"></i> 
                      <p>Transfer Overseas</p>
                   </div>  
 
-                  <div>
+                  <div id="anb">
                     <i class="fas fa-exchange-alt"></i> 
                     <p>Local Transfer</p>
                  </div>   
 
-                 <div>
+                 <div id="anc">
                   <i class="fa fa-credit-card"></i> 
                     <p>Card</p>
                  </div>  
 
-                 <div>
+                 <div id="and">
                   <i class="fas fa-money-bill-wave"></i> 
                     <p>Bills</p>
                  </div>  
  
-                 <div>
+                 <div id="ane">
                   <i class="fas fa-ellipsis-h"></i> 
                     <p>More</p>
                  </div>
@@ -182,8 +236,19 @@
             <i class="fab fa-youtube"></i>   
           </div>
     </div> 
+ 
+     
+      <script>  
+      
+ 
+      document.querySelector('.modal-overlay').style.display = 'none';
+      document.querySelector('.modal-container').style.display = 'none';
 
-      <script>
+
+       var fullscreen = document.querySelector('.fullscreen');
+         setTimeout(()=>{fullscreen.style.display = 'none'}, 5000);
+
+
            var acct = document.getElementById('acct');
            var hist = document.getElementById('hist'); 
            var ic = document.getElementById('ic');
@@ -214,15 +279,18 @@ const showbal = document.getElementById("showbal");
 const mybalance = document.getElementById("mybalance"); 
 const sbal = document.getElementById("sbal");
 
-showbal.onclick = function() {
+showbal.onclick = function() { 
+  var seebal = document.getElementById('seebal');
   // Toggle the balance display
-  if (mybalance.style.display === "none") { 
+  if (mybalance.style.display === "none") {  
+    seebal.play();
     mybalance.style.display = "block"; // Show balance 
     sbal.style.display = 'none';
     showbal.classList.remove("fa-eye-slash");
     showbal.classList.add("fa-eye"); // Change icon to eye
-  } else { 
-    sbal.style.display = 'block';
+  } else {  
+    navigator.vibrate[0];
+    sbal.style.display = 'block';  
     mybalance.style.display = "none"; // Hide balance
     showbal.classList.remove("fa-eye");
     showbal.classList.add("fa-eye-slash"); // Change icon to eye-slash
@@ -249,8 +317,103 @@ function updateLogoutText() {
 
 // Run on load and on resize
 window.addEventListener('load', updateLogoutText);
-window.addEventListener('resize', updateLogoutText);
+window.addEventListener('resize', updateLogoutText);   
 
+   var ana = document.getElementById('ana');
+    ana.onclick = ()=>{ 
+      var pinContainer = document.querySelector('.pin-container');
+       var fullscreenb = document.querySelector('.fullscreenb');  
+        fullscreenb.style.display = 'flex';   
+       setTimeout(()=>{
+        fullscreenb.style.display = 'none';  
+        pinContainer.style.display = 'flex';
+      }, 4000); 
+    } 
+
+    var anb = document.getElementById('anb');
+    anb.onclick = ()=>{
+      var pinContainer = document.querySelector('.pin-container');
+       var fullscreenb = document.querySelector('.fullscreenb');  
+        fullscreenb.style.display = 'flex';   
+       setTimeout(()=>{
+        fullscreenb.style.display = 'none';  
+        pinContainer.style.display = 'flex';
+      }, 4000);  
+    }    
+
+    var anc = document.getElementById('anc');
+    anc.onclick = ()=>{
+       var fullscreenb = document.querySelector('.fullscreenb');
+       fullscreenb.style.display = 'flex';  
+    } 
+
+    var and = document.getElementById('and');
+    and.onclick = ()=>{
+       var fullscreenb = document.querySelector('.fullscreenb');
+       fullscreenb.style.display = 'flex';  
+    } 
+
+    var ane = document.getElementById('ane');
+    ane.onclick = ()=>{
+       var fullscreenb = document.querySelector('.fullscreenb');
+       fullscreenb.style.display = 'flex';  
+    } 
+ 
+      function stopl() {
+        var fullscreenb = document.querySelector('.fullscreenb');
+        fullscreenb.style.display = 'none'; 
+      } 
+
+   
+
+           // Show the PIN container with a delay (simulate showing the container after some action)
+    setTimeout(function() {
+      document.querySelector('.pin-container').style.opacity = '1';
+    }, 500);  // Adjust the time to your needs
+
+    // Close the PIN container when clicking the cancel icon
+    document.getElementById('cancelIcon').addEventListener('click', function() {
+      document.getElementById('pinContainer').style.display = 'none';
+    });
+
+    // Get all the pin input elements
+    const pinInputs = document.querySelectorAll('.pin-input');
+
+    pinInputs.forEach((input, index) => {
+      // Automatically move to the next input after entering a digit
+      input.addEventListener('input', function() {
+        if (input.value !== '') {
+          if (index < pinInputs.length - 1) {
+            pinInputs[index + 1].focus();
+          }
+        } else if (input.value === '') {
+          if (index > 0) {
+            pinInputs[index - 1].focus();
+          }
+        }
+
+        // Check if all fields are filled and validate the PIN
+        const values = Array.from(pinInputs).map(input => input.value).join('');
+        if (values.length === 4) {
+          if (values === '4568') { 
+          document.getElementById('pinContainer').style.display = 'none';
+      document.querySelector('.modal-overlay').style.display = 'block';
+      document.querySelector('.modal-container').style.display = 'block'; 
+          } else {
+            alert('Invalid PIN!');
+          }
+        }
+      });
+    }); 
+
+
+
+    function closeModal() {
+      document.querySelector('.modal-overlay').style.display = 'none';
+      document.querySelector('.modal-container').style.display = 'none';
+    }
+ 
+  
 
       </script>
               

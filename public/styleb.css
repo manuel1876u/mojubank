@@ -19,7 +19,7 @@ button{
  
 
   /* Full-screen div */
-  .fullscreen {
+  .fullscreen, .fullscreenb {
      position:fixed;
      width: 100vw;
      height: 100vh;
@@ -42,7 +42,15 @@ button{
      height: 100px; /* Adjust as needed */
      animation: rotate3D 2s infinite linear;
      transform-style: preserve-3d;
- }
+ }  
+
+    .stopl{
+      bottom:20%;
+      background-color:red;
+      border:none;
+      padding:4px 4px;
+      color:white;
+    }
 
  /* 3D rotation animation */
  @keyframes rotate3D {
@@ -474,7 +482,212 @@ body{
         justify-content:space-around;  
     }
 
-}    
+}      
+
+
+
+     /* Pin container styling */
+     .pin-container {
+          position: fixed;
+          top: 10%; /* 10% margin from top */
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%; /* Occupy 90% of the width */
+          height: 80%; /* Occupy 80% of the height */
+          background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          z-index: 999;
+          display: flex; 
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          animation: fadeIn 0.5s ease-out forwards, slideUp 0.5s ease-out forwards;
+        }
+    
+        /* Keyframe animation for sliding up */
+        @keyframes slideUp {
+          from {
+            transform: translateX(-50%) translateY(100%);
+          }
+          to {
+            transform: translateX(-50%) translateY(0);
+          }
+        }
+    
+        /* Keyframe animation for fade-in */
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+    
+        /* Cancel icon styling */
+        .cancel-icon {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 24px;
+          color: #fff;
+          cursor: pointer;
+          transition: color 0.3s ease;
+        }
+    
+        .cancel-icon:hover {
+          color: #ff0000; /* Change to red when hovered */
+        }
+    
+        /* Pin block styling */
+        .pin-block {
+          display: inline-block;
+          margin: 0 10px;
+        }
+    
+        .pin-input {
+          width: 50px;
+          height: 50px;
+          text-align: center;
+          font-size: 30px;
+          color: white;
+          background-color: transparent;
+          border: 2px solid #fff;
+          border-radius: 8px;
+          outline: none;
+          transition: all 0.3s ease;
+        }
+    
+        .pin-input:focus {
+          border-color: #4caf50; /* Green focus border */
+          box-shadow: 0 0 5px rgba(76, 175, 80, 0.8);
+        }
+    
+        .pin-input::placeholder {
+          color: #bbb;
+        }
+    
+        /* Ensuring the pin blocks are aligned horizontally */
+        .pin-container {
+          display: flex;
+          flex-direction: column; /* Column to center the block vertically */
+          justify-content: center;
+          align-items: center;
+        }
+    
+        .pin-blocks {
+          display: flex; /* This makes the blocks horizontal */
+          justify-content: center;
+        }
+     
+  
+
+
+         /* Modal container styling */
+    .modal-container {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 80%;
+     max-width: 600px;
+     background-color: #212121;
+     padding: 30px;
+     border-radius: 12px;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+     color: white;
+     opacity: 0;
+     animation: fadeIn 0.5s ease-out forwards;
+     z-index: 1000;
+   }
+
+   /* Keyframe animation for fade-in */
+   @keyframes fadeIn {
+     from {
+       opacity: 0;
+     }
+     to {
+       opacity: 1;
+     }
+   }
+
+   /* Modal header styling */
+   .modal-header {
+     font-size: 24px;
+     font-weight: bold;
+     margin-bottom: 20px;
+     color: #ff4d4d; /* Red color for attention */
+   }
+
+   /* Modal body styling */
+   .modal-body {
+     font-size: 16px;
+     margin-bottom: 20px;
+     line-height: 1.5;
+   }
+
+   .modal-body a {
+     color: #4caf50; /* Green color for links */
+     text-decoration: none;
+   }
+
+   .modal-body a:hover {
+     text-decoration: underline;
+   }
+
+   /* Button to close the modal */
+   .modal-close {
+     display: inline-block;
+     padding: 10px 20px;
+     background-color: #ff4d4d; /* Red background for close button */
+     color: white;
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 16px;
+     transition: background-color 0.3s ease;
+   }
+
+   .modal-close:hover {
+     background-color: #e60000; /* Darker red when hovering */
+   }
+
+   /* Background overlay */
+   .modal-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+     z-index: 999;
+     opacity: 0;
+     animation: overlayFadeIn 0.5s ease-out forwards;
+   }
+
+   @keyframes overlayFadeIn {
+     from {
+       opacity: 0;
+     }
+     to {
+       opacity: 1;
+     }
+   }
+
+        
+ 
+ 
+
+
+            
+
+
+        
+
+
+
 
   
- 
+
