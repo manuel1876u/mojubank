@@ -8,9 +8,14 @@
     
     </head>  
 
-      <body>    
-          <div class="header">
-            <div class="find">
+      <body>   
+        
+        <div class="fullscreen" style="display:none">
+          <img src="/images/singerpaulfav.png" alt="loading..." class="rotating-image">
+    </div>
+
+          <div class="header"> 
+            <div class="find">  
                   <i class="fa fa-map-marker-alt"></i>
                   <p style="margin-left:7px;">Find Us</p>
             </div>  
@@ -33,20 +38,22 @@
                         </div> 
 
                         <!-----Input USER ID-->
-                        <fieldset>
-                            <legend>User ID</legend>
+                        <fieldset id="fsa">
+                            <legend id="ulab">User ID</legend>
                             <input type="text" id="userid" placeholder=" " required />
-                        </fieldset>  
+                        </fieldset>   
+
+                        <p id="erro"></p>
 
                           <!-----Input PIN-->  
-                          <fieldset>
-                            <legend>PIN</legend>
-                            <input type="password" id="userpin" placeholder=" " required />
-                        </fieldset>    
-
-                        <button id="submit">Login</button> 
-                        <button id="start">Get Started</button>  
-
+                          <fieldset id="fsb">
+                            <legend id="uplab">PIN</legend>
+                            <input type="password" id="userpin" oninput="validateNumberInput(this)" placeholder=" " required />
+                        </fieldset>     
+ 
+                        <button id="submit">Login</button>   
+                 </form>   
+                        <button id="start">Get Started</button>   
                         <div class="last">
                              <p>Forgot User ID or PIN</p>
                              <p>Frequently Asked Questions</p>   
@@ -54,7 +61,6 @@
                              <p>Security & You</p>
                         </div> 
                       </div> 
-                 </form> 
                 </div>
             </div>    
          
@@ -94,12 +100,62 @@
                        //    Accept : 'application/json',
                     //      } 
                 //        });
-                //   }
-      //      } 
+                //   } 
+
+        
+       
+      var userid = document.getElementById('userid'); 
+     var userpin = document.getElementById('userpin');  
+
+     userid.onfocus = function(e) { 
+      var fsa = document.getElementById('fsa');
+       var ulab = document.getElementById('ulab');     
+       e.target.style.borderBottom = '1px solid lightgray';  
+       e.target.style.marginTop = '9px'; 
+       ulab.style.fontSize = '12px';
+     }    
+
+          // Handle blur event for the 'userpin' input
+userid.onblur = function(e) {
+    var ulab = document.getElementById('ulab'); 
+    if (!e.target.value) { // Check if the input is empty
+        ulab.style.fontSize = '16px';  
+        e.target.style.marginTop = '2px';
+    }
+};
+
+
+     userpin.onfocus = function(e) { 
+      var fsb = document.getElementById('fsb');
+       var uplab = document.getElementById('uplab'); 
+       uplab.style.marginBottom = '5px';
+       e.target.style.borderBottom = '1px solid lightgray';   
+       e.target.style.marginTop = '9px';
+       uplab.style.fontSize = '12px';
+     }    
+ 
+userpin.onblur = function(e) {
+    var uplab = document.getElementById('uplab'); 
+    if (!e.target.value) { // Check if the input is empty
+        uplab.style.fontSize = '16px'; 
+        e.target.style.marginTop = '2px';
+    }
+};
+ 
+
+   
+                  function validateNumberInput(input) {
+                          // Allow only numeric input, remove non-numeric characters
+                          input.value = input.value.replace(/\D/g, '');
+                        }
+ 
+
 
        var logino = document.getElementById('logino');
        logino.addEventListener('submit', async (e)=>{  
-        e.preventDefault();
+        e.preventDefault(); 
+        var fullscreen = document.querySelector('.fullscreen'); 
+        fullscreen.style.display = 'flex';
             var userid = document.getElementById('userid').value; 
             var userpin = document.getElementById('userpin').value;  
             var subm = document.getElementById('submit'); 
@@ -122,25 +178,33 @@
                          } 
               }); 
 
-              if(!response.ok){ 
+              if(!response.ok){  
+                fullscreen.style.display = 'none';
                 subm.style.opacity = '2';
             subm.disabled = false;
             subm.innerHTML = 'Login'; 
                    throw response; 
               }   
-
+           
+              fullscreen.style.display = 'none';
               subm.style.opacity = '2';
             subm.disabled = false;
-            subm.innerHTML = 'submitted'; 
+            subm.innerHTML = 'submitted';  
 
             setTimeout(()=>{
               window.location.href = '/member/IB/profile';
             }, 3000);
                 
           }
-    catch(err) {
+    catch(err) {   
+      var loginf = document.querySelector('.loginform'); 
+      loginf.style.animationName = 'errorrotate';
+      loginf.style.animationDuration = '0.3s';
+      loginf.style.animationIterationCount = '1';
+      var erro = document.getElementById('erro');
+          fullscreen.style.display = 'none';
           const error = await err.text();
-          alert(error);
+          erro.innerHTML = error;
     }
              
        });

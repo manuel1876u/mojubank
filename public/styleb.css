@@ -12,8 +12,70 @@
 
 button{ 
     font-family:'Poppins', sans-serif;
-}
+} 
 
+
+
+ 
+
+  /* Full-screen div */
+  .fullscreen {
+     position:fixed;
+     width: 100vw;
+     height: 100vh;
+     display:none;
+     display: flex; 
+     top:0;
+     left:0;
+     right:0;
+     background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+     z-index: 999; /* Ensures overlay appears on top */ 
+     bottom:0;
+     justify-content: center;
+     align-items: center;  
+ }
+
+
+   /* Image rotation styling */
+   .rotating-image {
+     width: 100px; /* Adjust as needed */
+     height: 100px; /* Adjust as needed */
+     animation: rotate3D 2s infinite linear;
+     transform-style: preserve-3d;
+ }
+
+ /* 3D rotation animation */
+ @keyframes rotate3D {
+     0% {
+         transform: rotateX(0deg) rotateY(0deg);
+     }
+     50% {
+         transform: rotateX(180deg) rotateY(180deg);
+     }
+     100% {
+         transform: rotateX(360deg) rotateY(360deg);
+     }
+ }
+
+
+
+
+
+
+
+ 
+
+/* General rules to remove borders from fieldset and input elements */
+input, fieldset {
+     border: none;
+     outline: none;
+ }
+ 
+ /* Specific to focused inputs if needed */
+ input:focus, fieldset:focus {
+     border: none;
+     outline: none;
+ }
 
 
 
@@ -46,8 +108,7 @@ body{
 }  
 
 .pfpenclose .first .a i, .pfpenclose .first .b i{
-     color:white;  
-     font-size:20px;
+     color:white;   
      margin-right:10px;
 } 
 
@@ -70,9 +131,12 @@ body{
 }  
 
 .qtn{
-      padding:5px 5px;
+      padding-left:15px; 
+      padding-right:15px;
+      padding-top:10px;
       border:1px solid white;
-      border-radius:50px;
+      border-radius:50%;  
+      font-size:14px;
 }
 
 
