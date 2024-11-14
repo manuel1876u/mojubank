@@ -18,7 +18,7 @@
                 
                   <div class="b">
                     <i class="fa fa-question"></i> 
-                    <button>Log out</button>
+                    <button id="logout">Log out</button>
                   </div> 
                 </div> 
                   
@@ -137,7 +137,7 @@
       
     <div id="tc" class="transaction-container" style="display:none">
         <div class="transaction">
-          <div class="transaction-header">Transaction</div>
+          <div class="transaction-header">Debit</div>
           <div class="transaction-details">
             Date: 2024-11-13 <br>
             Description: Payment for service <br>
@@ -147,7 +147,7 @@
         </div>
     
         <div class="transaction">
-          <div class="transaction-header">Transaction</div>
+          <div class="transaction-header">Credit</div>
           <div class="transaction-details">
             Date: 2024-11-12 <br>
             Description: Purchase of goods <br>
@@ -217,6 +217,21 @@ showbal.onclick = function() {
     showbal.classList.add("fa-eye-slash"); // Change icon to eye-slash
   }
 };
+  
+ 
+
+function updateLogoutText() {
+    const logoutContainer = document.getElementById("logout");
+    if (window.innerWidth >= 751) {
+        logoutContainer.innerHTML = 'Proceed to Log out';
+    } else {
+        logoutContainer.innerHTML = 'Log out'; // Optionally clear content for smaller screens
+    }
+}
+
+// Run on load and on resize
+window.addEventListener('load', updateLogoutText);
+window.addEventListener('resize', updateLogoutText);
 
 
       </script>

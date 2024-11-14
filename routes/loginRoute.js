@@ -4,6 +4,7 @@ const app = express();
 const router = express.Router(); 
 const loginController = require('../controllers/loginController')
 
- router.get('/IB/Welcome', loginController.getLogin);
+ router.get('/IB/Welcome', loginController.getLogin);  
+ router.post('/postnewmember', loginController.postMember) 
 
- module.exports = router;
+ module.exports = router;      

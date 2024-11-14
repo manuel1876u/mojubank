@@ -13,10 +13,9 @@ body{
   background-repeat:no-repeat; 
 }   
  
-   button:hover{
-       opacity:0.7864;
-   }  
-
+  i:hover, button:hover{
+   opacity:0.7864;
+} 
    
 
    .header{

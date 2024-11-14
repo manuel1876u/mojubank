@@ -6,7 +6,9 @@
  const mongodb = require('mongodb');
  const mongoose = require('mongoose'); 
  const loginRoute = require('./routes/loginRoute'); 
- const dashboardRoute = require('./routes/dashboardRoute');
+ const dashboardRoute = require('./routes/dashboardRoute');  
+
+  const MemberSchema = require('./models/register');
 
  const app = express(); 
 
