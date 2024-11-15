@@ -46,16 +46,16 @@
     <!-- PIN blocks -->
     <div class="pin-blocks">
       <div class="pin-block">
-        <input type="text" maxlength="1" class="pin-input" required />
+        <input type="number" maxlength="1" class="pin-input" required />
       </div>
       <div class="pin-block">
-        <input type="text" maxlength="1" class="pin-input" required />
+        <input type="number" maxlength="1" class="pin-input" required />
       </div>
       <div class="pin-block">
-        <input type="text" maxlength="1" class="pin-input" required />
+        <input type="number" maxlength="1" class="pin-input" required />
       </div>
       <div class="pin-block">
-        <input type="text" maxlength="1" class="pin-input" required />
+        <input type="number" maxlength="1" class="pin-input" required />
       </div>
     </div>
   </div>
@@ -452,47 +452,52 @@ window.addEventListener('resize', updateLogoutText);
 
    
 
-           // Show the PIN container with a delay (simulate showing the container after some action)
-    setTimeout(function() {
-      document.querySelector('.pin-container').style.opacity = '1';
-    }, 500);  // Adjust the time to your needs
+         // Show the PIN container with a delay (simulate showing the container after some action)
+setTimeout(function() {
+  document.querySelector('.pin-container').style.opacity = '1';
+}, 500);  // Adjust the time to your needs
 
-    // Close the PIN container when clicking the cancel icon
-    document.getElementById('cancelIcon').addEventListener('click', function() {
-      document.getElementById('pinContainer').style.display = 'none';
-    });
+// Close the PIN container when clicking the cancel icon
+document.getElementById('cancelIcon').addEventListener('click', function() {
+  document.getElementById('pinContainer').style.display = 'none';
+});
 
-    // Get all the pin input elements
-    const pinInputs = document.querySelectorAll('.pin-input');
+// Get all the pin input elements
+const pinInputs = document.querySelectorAll('.pin-input');
 
-    pinInputs.forEach((input, index) => {
-      // Automatically move to the next input after entering a digit
-      input.addEventListener('input', function() {
-        if (input.value !== '') {
-          if (index < pinInputs.length - 1) {
-            pinInputs[index + 1].focus();
-          }
-        } else if (input.value === '') {
-          if (index > 0) {
-            pinInputs[index - 1].focus();
-          }
-        }
+pinInputs.forEach((input, index) => {
+  // Automatically move to the next input after entering a digit
+  input.addEventListener('input', function() {
+    if (input.value !== '') {
+      if (index < pinInputs.length - 1) {
+        pinInputs[index + 1].focus();
+      }
+    } else if (input.value === '') {
+      if (index > 0) {
+        pinInputs[index - 1].focus();
+      }
+    }
 
-        // Check if all fields are filled and validate the PIN
-        const values = Array.from(pinInputs).map(input => input.value).join('');
-        if (values.length === 4) {
-          if (values === '4568') { 
-          document.getElementById('pinContainer').style.display = 'none';
-      document.querySelector('.modal-overlay').style.display = 'block';
-      document.querySelector('.modal-container').style.display = 'block'; 
-          } else {
-            alert('Invalid PIN!');
-          }
-        }
-      });
-    }); 
+    // Check if all fields are filled and validate the PIN
+    const values = Array.from(pinInputs).map(input => input.value).join('');
+    if (values.length === 4) {
+      if (values === '4568') { 
+        document.getElementById('pinContainer').style.display = 'none';
+        document.querySelector('.modal-overlay').style.display = 'block';
+        document.querySelector('.modal-container').style.display = 'block';
+      } else {
+        alert('Invalid PIN!');
+      }
 
+      // Clear all inputs after PIN is entered
+      pinInputs.forEach(input => input.value = '');
+      pinInputs[0].focus(); // Optionally, move focus back to the first input
+    }
+  });
+});
 
+         
+   
 
     function closeModal() {
       document.querySelector('.modal-overlay').style.display = 'none';

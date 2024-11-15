@@ -45,7 +45,7 @@ body{
  
 
   /* Full-screen div */
-  .fullscreen {
+  .fullscreen, .fullscreenb {
       position:fixed;
       width: 100vw;
       display:none;
@@ -59,7 +59,15 @@ body{
       bottom:0;
       justify-content: center;
       align-items: center;  
-  }
+  } 
+
+  .stopl{
+   bottom:20%;
+   background-color:red;
+   border:none;
+   padding:4px 4px;
+   color:white; 
+ }
  
 
     /* Image rotation styling */
@@ -238,13 +246,13 @@ button{
       }  
  
          
-      #submit, #start{
+      #subm, #start{
          width:100%; 
          padding:12px;  
          border-radius:3px;
       } 
 
-      #submit{
+      #subm{
           background-color:red;
           color:white; 
           border:none;
