@@ -113,12 +113,22 @@ body{
 .pfpenclose .first .a, .pfpenclose .first .b{
     display:flex;  
     width:100%;
-}  
+}    
+
+.pfpenclose .first .a i{
+     margin-top:10px;
+}
 
 .pfpenclose .first .a i, .pfpenclose .first .b i{
      color:white;   
      margin-right:10px;
-} 
+}   
+
+
+.pfpenclose .first .a i{
+   font-size:18px;
+}
+ 
 
 .pfpenclose .first .b button{
     color:white; 
@@ -126,7 +136,7 @@ body{
     background:none;
     font-family:'Poppins', sans-serif;
     border-radius:30px;
-    padding:7px; 
+    padding:5px; 
     width:100%; 
 }
 
@@ -134,16 +144,17 @@ body{
 
 .pfpenclose .b{
     display:flex;
-    justify-content:space-between;  
+    justify-content:space-between;   
+    margin-bottom:30px;
     width:20%; 
 }  
 
 .qtn{
-      padding-left:15px; 
-      padding-right:15px;
-      padding-top:10px;
+      padding-left:10px; 
+      padding-right:10px;
+      padding-top:8px;
       border:1px solid white;
-      border-radius:50%;  
+      border-radius:100%;  
       font-size:14px;
 }
 
@@ -161,7 +172,8 @@ body{
 
   #sbal{
       font-size:20px; 
-      color:white;
+      color:white; 
+      display:block;
   }
 
 .second #mybalance span{
