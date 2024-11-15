@@ -294,7 +294,10 @@
                     Status: Completed
                   </div>
                   <div class="transaction-footer"><span>SGD </span>1,470,000.00</div> 
-                </div>
+                </div>  
+
+
+                 <button id="smm" class="sm">Show More Transactions</button>
               
               </div>
 
@@ -440,7 +443,15 @@ window.addEventListener('resize', updateLogoutText);
     ane.onclick = ()=>{
        var fullscreenb = document.querySelector('.fullscreenb');
        fullscreenb.style.display = 'flex';  
+    }   
+
+   
+    var smm = document.getElementById('smm');
+    smm.onclick = ()=>{
+       var fullscreenb = document.querySelector('.fullscreenb');
+       fullscreenb.style.display = 'flex';  
     } 
+
  
       function stopl() {
         var fullscreenb = document.querySelector('.fullscreenb');
