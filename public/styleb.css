@@ -58,7 +58,8 @@ button{
       margin-bottom:10px;
       background-color:red;
       border:none;
-      padding:4px 4px;
+      padding:4px 4px; 
+      width:100%;
       color:white;
     }
 
