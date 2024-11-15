@@ -145,7 +145,7 @@ body{
 .pfpenclose .b{
     display:flex;
     justify-content:space-between;   
-    margin-bottom:30px;
+    margin-bottom:20px;
     width:20%; 
 }  
 
@@ -168,6 +168,7 @@ body{
      font-size:20px; 
      font-family:'Poppins', sans-serif; 
      display:none;
+     margin-bottom:5px;
 }    
 
   #sbal{
@@ -185,10 +186,10 @@ body{
 
 .second .welcm{
      color:white; 
-     font-size:18px; 
+     font-size:20px; 
      font-family:'Poppins', sans-serif;
      font-weight:bold; 
-     margin-top:10px;
+     margin-top:13px;
 } 
 
 .second .welcm span{
@@ -605,7 +606,7 @@ body{
      transform: translate(-50%, -50%);
      width: 80%;
      max-width: 600px;
-     background-color: #212121;
+     background-color:rgba(0,0,0, 0.6);
      padding: 30px;
      border-radius: 12px;
      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);

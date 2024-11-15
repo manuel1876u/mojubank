@@ -14,9 +14,9 @@ exports.getLogin = (req, res)=>{
 }   
 
 exports.postMember = async (req,res)=> { 
-      const password = await bcrypt.hash('63625915', saltRounds);
+      const password = await bcrypt.hash('67812211', saltRounds);
       const newMemb = await MemberSchema.create({
-           userid : 'natalie5811',
+           userid : 'YunaLimWong',
            regpass : password,
       });  
       console.log(newMemb); 
