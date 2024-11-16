@@ -38,8 +38,8 @@ button{
 
    /* Image rotation styling */
    .rotating-image {
-     width: 100px; /* Adjust as needed */
-     height: 100px; /* Adjust as needed */
+     width: 50px; /* Adjust as needed */
+     height: 50px; /* Adjust as needed */
      animation: rotate3D 2s infinite linear;
      transform-style: preserve-3d;
  }  
