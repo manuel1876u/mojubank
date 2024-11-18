@@ -4,7 +4,7 @@
     "description": "DBS online banking, also known as digibank, is a digital platform that allows customers to manage their finances and wealth",
     "start_url": "/IB/Welcome",  
     "display": "standalone",
-    "background_color": "#ffffff", 
+    "background_color": "#212121", 
     "theme_color": "#000000",
     "icons": [
       {
