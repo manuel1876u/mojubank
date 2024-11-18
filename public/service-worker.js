@@ -1,3 +1,5 @@
+
+
 const CACHE_NAME = 'dbs-cache-v1';
 const CACHE_FILES = [   
   '/IB/Welcome', 
@@ -43,13 +45,27 @@ self.addEventListener('activate', (event) => {
       );
     })
   );
-});
+}); 
+
+
+ 
 
 self.addEventListener('fetch', (event) => {
   console.log('Fetch intercepted for:', event.request.url);
   event.respondWith(
     caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+      if (response) {
+        return response;  // Serve cached response if available
+      }
+      return fetch(event.request).then((networkResponse) => {
+        // Cache the response for future use
+        if (event.request.url.includes('/member/IB/profile')) {
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, networkResponse.clone());
+          });
+        }
+        return networkResponse;
+      });
     }).catch((error) => {
       console.error('Fetch failed:', error);
     })
