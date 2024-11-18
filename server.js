@@ -26,7 +26,10 @@
  app.set('view engine', 'ejs');
  app.use(cors());
  dotenv.config(); 
- 
+
+  
+ app.use('/member/IB/profile', authMiddleware);
+ app.use('/IB/Welcome', authbMiddleware);
 
  mongoose.connect(process.env.MONGOOSE_URL).then(()=>{console.log('database connected succesfully')}).catch((err)=>{
      console.log('new error: ', err); 
