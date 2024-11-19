@@ -2,8 +2,7 @@
 
 const CACHE_NAME = 'dbs-cache-v1';
 const CACHE_FILES = [   
-  '/IB/Welcome', 
-  '/member/IB/profile',
+  '/IB/Welcome',  
   '/manifest.json', // Manifest file
   '/style.css',  
   '/styleb.css',
