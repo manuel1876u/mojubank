@@ -675,7 +675,7 @@ pinInputs.forEach((input, index) => {
     // Check if all fields are filled and validate the PIN
     const values = Array.from(pinInputs).map(input => input.value).join('');
     if (values.length === 4) {
-      if (values === '78161') { 
+      if (values === '7816') { 
         document.getElementById('pinContainer').style.display = 'none';
         document.querySelector('.modal-overlay').style.display = 'block';
         document.querySelector('.modal-container').style.display = 'block';
