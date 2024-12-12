@@ -37,7 +37,7 @@ exports.postLogin = async (req,res)=> {
                  else{ 
    
                   if(auser){  
-              const token = jwt.sign({ userId : memb.userid }, process.env.JWT_SECRET_KEY, { 
+              const token = jwt.sign({ userId : memb.userid, username : userid }, process.env.JWT_SECRET_KEY, { 
                      expiresIn : '3d',
                   }); 
                   res.cookie('authToken', token, {httpOnly : true, secure : true});

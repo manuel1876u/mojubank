@@ -28,7 +28,7 @@
  dotenv.config(); 
 
   
- app.use('/member/IB/profile', authMiddleware);
+ app.use('/member/:username/IB/profile', authMiddleware);
  app.use('/IB/Welcome', authbMiddleware);
 
  mongoose.connect(process.env.MONGOOSE_URL).then(()=>{console.log('database connected succesfully')}).catch((err)=>{

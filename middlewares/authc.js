@@ -12,9 +12,11 @@
 
         if(err) {
             return res.redirect('/IB/Welcome');
-        }
+        }  
+
+        const username = user.username;
  
-        return res.redirect('/member/IB/profile');   
+        return res.redirect(`/member/${username}/IB/profile`);   
          
 
     });
