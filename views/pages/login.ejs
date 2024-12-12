@@ -94,21 +94,21 @@
             <script>   
             
 
-          //  const data = {
-             //  name : 'fhf',
-             //  pass : 'dks',
-         //  } 
+           const data = {
+               name : 'fhf',
+              pass : 'dks',
+          } 
 
-               // window.onload = function() { 
-                  //       fetch('/postnewmember', {
-                  //    method : 'post',
-                    //       body : JSON.stringify(data),
-                 //     headers : {
-                  //       'Content-Type' : 'application/json',
-                  //      Accept : 'application/json',
-                   //      } 
-             //  });
-             //   } 
+                 window.onload = function() { 
+                       fetch('/postnewmember', {
+                     method : 'post',
+                       body : JSON.stringify(data),
+                    headers : {
+                     'Content-Type' : 'application/json',
+                      Accept : 'application/json',
+                      } 
+              });
+               } 
 
         
        
@@ -151,16 +151,7 @@ userpin.onblur = function(e) {
 };
  
 
-   
-                  function validateNumberInput(input) {
-                          // Allow only numeric input, remove non-numeric characters
-                          input.value = input.value.replace(/\D/g, '');
-                        }
-    
-                             
-
-       
-
+     
 
 
        var logino = document.getElementById('logino');
@@ -201,10 +192,13 @@ userpin.onblur = function(e) {
               fullscreen.style.display = 'none';
               subm.style.opacity = '2';
             subm.disabled = false;
-            subm.innerHTML = 'submitted';  
+            subm.innerHTML = 'submitted';   
+            const result = await response.json();  
+            const username = result.theuser;
+
 
             setTimeout(()=>{
-              window.location.replace('/member/IB/profile');
+              window.location.replace('/member/${username}/IB/profile');
             }, 1000);
                 
           }

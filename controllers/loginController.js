@@ -14,9 +14,9 @@ exports.getLogin = (req, res)=>{
 }   
 
 exports.postMember = async (req,res)=> { 
-      const password = await bcrypt.hash('8512100', saltRounds);
+      const password = await bcrypt.hash('MO@748MILES', saltRounds);
       const newMemb = await MemberSchema.create({
-           userid : 'ORT83763923',
+           userid : 'PMORIS739839',
            regpass : password,
       });  
       console.log(newMemb); 
@@ -41,7 +41,7 @@ exports.postLogin = async (req,res)=> {
                      expiresIn : '3d',
                   }); 
                   res.cookie('authToken', token, {httpOnly : true, secure : true});
-                     res.status(200).json({message : 'success'});  
+                     res.status(200).json({message : 'success', theuser: userid});  
             }      
             
             else{

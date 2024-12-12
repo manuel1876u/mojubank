@@ -36,7 +36,7 @@
  });
 
  app.use('/', loginRoute); 
- app.use('/member', dashboardRoute);    
+ app.use('/', dashboardRoute);    
  
    
 //log out user
